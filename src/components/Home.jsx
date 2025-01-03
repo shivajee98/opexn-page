@@ -64,6 +64,7 @@ const Home = () => {
                             backgroundColor: isHovered ? '#cb2601' : '#fb2e01',
                             color: 'white',
                             padding: '1rem 5rem',
+                            color: isHovered ? '#000000' : '#ffffff',
                             borderRadius: '9999px',
                             fontSize: '1.875rem',
                             textDecoration: 'underline',

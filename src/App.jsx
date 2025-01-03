@@ -3,9 +3,26 @@ import Home from './components/Home';
 import Contact from './components/Contact';
 
 const App = () => {
+    const noScrollbarStyle = {
+        overflowY: 'scroll', 
+        scrollbarWidth: 'none',
+        msOverflowStyle: 'none', 
+    };
+
     return (
-        
-        <div className="min-h-screen">  
+        <div
+            style={{
+                ...noScrollbarStyle,
+                height: '100vh', // Full viewport height
+            }}
+        >
+            <style>
+                {`
+                    div::-webkit-scrollbar {
+                        display: none;
+                    }
+                `}
+            </style>
             <Home />
             <Contact />
         </div>
