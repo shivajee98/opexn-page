@@ -61,9 +61,7 @@ const Contact = () => {
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center text-lg sm:text-2xl lg:text-3xl text-blue-600 hover:text-blue-800 transition"
                                     >
-                                        <FaLinkedin className="mr-2 text-4xl sm:text-6xl lg:text-8xl" />
-                                        LinkedIn
-                                    </a>
+                                        <FaLinkedin className="mr-2 text-4xl sm:text-6xl lg:text-8xl" />                                    </a>
                                 </td>
                             </tr>
                         </tbody>

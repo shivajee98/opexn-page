@@ -4,26 +4,33 @@ import mobile from '../assets/asset.png';
 
 const Home = () => {
     const [isHovered, setIsHovered] = useState(false);
+
     const handleClick = () => {
         window.open('https://www.linkedin.com/company/opexn/', '_blank');
     };
 
     return (
         <div
-            className="min-h-screen flex flex-col lg:flex-row" // Responsive flex layout
+            className="min-h-screen flex flex-col lg:flex-row"
             style={{
                 backgroundColor: '#2b1821',
             }}
         >
             {/* Left Section */}
-            <div
-                className="flex-1 flex flex-col justify-center items-center lg:items-start lg:pl-24" // Center for mobile, align left for desktop
-            >
-                {/* Image in the top-left corner */}
+            <div className="flex-1 flex flex-col justify-center items-center lg:items-start lg:pl-24">
+                {/* Responsive Logo */}
                 <img
                     src={logo}
                     alt="opexn"
-                    className="w-32 lg:w-auto mb-6 lg:ml-20 transform scale-100 lg:scale-125" // Responsive scaling
+                    style={{
+                        maxWidth: '100%',
+                        height: 'auto',
+                        marginBottom: '1rem',
+                        transition: 'transform 0.3s ease-in-out',
+                        transform: 'scale(1)', // Default scale
+                        ...(window.innerWidth >= 1024 && { transform: 'scale(1)', marginBottom: '50px' }), // Scale for desktop
+                        ...(window.innerWidth < 768 && { transform: 'scale(0.7)' }), // Scale for mobile
+                    }}
                 />
 
                 <div
@@ -33,7 +40,7 @@ const Home = () => {
                 </div>
 
                 <div
-                    className="text-white text-lg sm:text-2xl lg:text-3xl text-center lg:text-left leading-tight mb-8"
+                    className="text-white text-lg sm:text-2xl ml-2 mr-2 lg:text-3xl text-center lg:text-left leading-tight mb-8"
                 >
                     Your One Stop Solution to Events, Expo,<br />
                     Workshops, and more. Reach out to us<br />
@@ -45,9 +52,9 @@ const Home = () => {
                         onClick={handleClick}
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
-                        className={`text-white py-3 px-8 rounded-full text-lg lg:text-2xl transition-all duration-300 ${
+                        className={`text-white py-3 px-8 rounded-full hover:text-black text-lg lg:text-2xl transition-all duration-300 ${
                             isHovered
-                                ? 'bg-[#cb2601] text-black shadow-lg transform scale-105'
+                                ? 'bg-[#fc5834] text-black shadow-lg transform scale-105'
                                 : 'bg-[#fb2e01]'
                         }`}
                     >
