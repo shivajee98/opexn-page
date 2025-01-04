@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../assets/file.png';
+import logo from '../assets/file2.svg';
 import mobile from '../assets/asset.png';
 
 const Home = () => {
@@ -28,7 +28,7 @@ const Home = () => {
                         marginBottom: '1rem',
                         transition: 'transform 0.3s ease-in-out',
                         transform: 'scale(1)', // Default scale
-                        ...(window.innerWidth >= 1024 && { transform: 'scale(1)', marginBottom: '50px' }), // Scale for desktop
+                        ...(window.innerWidth >= 1024 && { transform: 'scale(1.8)', marginBottom: '100px', marginLeft: '140px' }), // Scale for desktop
                         ...(window.innerWidth < 768 && { transform: 'scale(0.7)' }), // Scale for mobile
                     }}
                 />
@@ -65,7 +65,7 @@ const Home = () => {
 
             {/* Right Section */}
             <div
-                className="flex-1 flex items-center justify-center lg:justify-end lg:pr-24 mt-10 lg:mt-0"
+                className="flex-1 flex items-center justify-center lg:justify-end lg:pr-24 mt-10 lg:mt-20"
             >
                 <img
                     src={mobile}
