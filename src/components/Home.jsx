@@ -10,68 +10,46 @@ const Home = () => {
 
     return (
         <div
-            className="min-h-screen flex"
+            className="min-h-screen flex flex-col lg:flex-row" // Responsive flex layout
             style={{
                 backgroundColor: '#2b1821',
             }}
         >
             {/* Left Section */}
             <div
-                className="flex-1 flex flex-col mb-24 justify-center"
-                style={{
-                    backgroundColor: '#2b1821',
-                    paddingLeft: '100px',
-                    position: 'relative', // Make the container relative so we can position elements inside it
-                }}
+                className="flex-1 flex flex-col justify-center items-center lg:items-start lg:pl-24" // Center for mobile, align left for desktop
             >
-                {/* Image in the top left corner */}
-                <div className='mt-1'>
+                {/* Image in the top-left corner */}
                 <img
                     src={logo}
                     alt="opexn"
-                    style={{
-                        marginLeft: '75px',
-                        transform: 'scale(1.3)',
-                        width: 'auto',  // Keeps the original size
-                        height: 'auto', // Keeps the original size
-                    }}
-                    />
-                </div>
+                    className="w-32 lg:w-auto mb-6 lg:ml-20 transform scale-100 lg:scale-125" // Responsive scaling
+                />
 
                 <div
-                    className="text-white font-bold text-9xl leading-tight mb-4 mt-10"
-                    style={{
-                        lineHeight: '1.1',
-                    }}
+                    className="text-white font-bold text-4xl sm:text-6xl lg:text-9xl text-center lg:text-left leading-tight mb-4"
                 >
                     Coming<br />Soon!
                 </div>
+
                 <div
-                    className="text-white text-3xl"
-                    style={{
-                        lineHeight: '1.1',
-                    }}
+                    className="text-white text-lg sm:text-2xl lg:text-3xl text-center lg:text-left leading-tight mb-8"
                 >
-                    <br />
-                    Your One Stop Solution to Events, Expo,<br />Workshops and more. Reach out to us<br />to know more!
+                    Your One Stop Solution to Events, Expo,<br />
+                    Workshops, and more. Reach out to us<br />
+                    to know more!
                 </div>
-                <div className="mt-12">
+
+                <div className="mt-8 lg:mt-12">
                     <button
                         onClick={handleClick}
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
-                        style={{
-                            backgroundColor: isHovered ? '#cb2601' : '#fb2e01',
-                            color: 'white',
-                            padding: '1rem 5rem',
-                            color: isHovered ? '#000000' : '#ffffff',
-                            borderRadius: '9999px',
-                            fontSize: '1.875rem',
-                            textDecoration: 'underline',
-                            transition: 'all 0.3s ease',
-                            boxShadow: isHovered ? '0 4px 12px rgba(0, 0, 0, 0.2)' : 'none',
-                            transform: isHovered ? 'scale(1.05)' : 'scale(1)',
-                        }}
+                        className={`text-white py-3 px-8 rounded-full text-lg lg:text-2xl transition-all duration-300 ${
+                            isHovered
+                                ? 'bg-[#cb2601] text-black shadow-lg transform scale-105'
+                                : 'bg-[#fb2e01]'
+                        }`}
                     >
                         L E A R N M O R E
                     </button>
@@ -79,19 +57,15 @@ const Home = () => {
             </div>
 
             {/* Right Section */}
-            <div className="flex-1 flex items-center justify-center" style={{ backgroundColor: '#2b1821' }}>
-  <img 
-    src={mobile} 
-    alt="" 
-    style={{
-      transform: 'scale(1.3)',   // This will scale the image 3 times larger
-      transformOrigin: 'center', // Ensure the image scales from the center
-      width: 'auto', 
-      height: 'auto',
-    }} 
-  />
-</div>
-
+            <div
+                className="flex-1 flex items-center justify-center lg:justify-end lg:pr-24 mt-10 lg:mt-0"
+            >
+                <img
+                    src={mobile}
+                    alt="mobile preview"
+                    className="w-2/3 lg:w-auto transform scale-100 lg:scale-125"
+                />
+            </div>
         </div>
     );
 };
